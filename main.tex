@@ -1,14 +1,36 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 
-\title{WhitePaper2}
-\author{cnoyes }
+\title{BitHealth - A P2P Disease Reporting Platform}
+\author{Charles Noyes}
 \date{July 2015}
 
 \begin{document}
+\maketitle
+
+\begin{abstract}
+This paper proposes a new architecture for disease reporting in technologically fragmented regions, underpinned by principles adapted from the Bitcoin and BitTorrent projects. Our proposed platform is built from two co-dependant networks. The first is a decentralized registry of users that allows for quick authentication of a user's purported identity. This is done through the inclusion of 'registrations' (notices of private key allocation to a certain identity) on a distributed hash chain (the 'blockchain'). The second is a network based around the dissemination of information through the use of a Distributed Hash Table (DHT). A 'snapshot' of this DHT is included periodically within the blockchain; however, to prevent bloat that could result from Sybil attacks, individual cryptographic proofs of work are included within each submission and used as a filtering mechanism. In summary, we provide a decentralized platform for users to share generalized information. By leveraging protocols developed and proven by much larger open source projects, we hope to mitigate most of the existing attack vectors that could threaten the security of ur network.
+\end{abstract}
+
 
 \maketitle
 
 \section{Introduction}
+Disease reporting networks are . Recent events have shown the important role of these tools for news coverage~\cite{sklar2009} and also for political movements, like in Middle East's ``Arab Spring''. Although their role in social revolutions should not be overstated~\cite{khondker2011role}, it is exemplary to learn how dictatorships frequently resort to shutting down the internet in trying to control such possibly destabilizing movements~\cite{glanz2011,warner2012}. Blocking internet access, however, is never fully effective against social movements, as some people always find ways to circumvent such blockage~\cite{dachis2011}.
+
+The possibility that the service providers themselves could be convinced to participate of a social media blockage~\cite{halliday2011} would affect people's ability to communicate in a much more dramatic way than just disrupting a few network backbones. As our society's dependence on these services increases, the single point of failure on such basic communication platforms (at the provider's own discretion) is not only unacceptable but also directly opposes Internet's key design features of providing redundancy for information transmission~\cite{wikipediainternet}.
+
+Reports of widescale internet wiretapping with the cooperation of large corporations~\cite{greenwald2013} reveal the danger the present platforms pose to user's privacy. The fact that a single entity is able to access private communication and personal data at their will should raise concerns to anyone who thinks about it for a while. A recent House of Lords (UK) report openly recognizes the dangers of mass surveillance\footnote{``Mass surveillance has the potential to erode privacy. As privacy is an essential pre-requisite to the exercise of individual freedom, its erosion weakens the constitutional foundations on which democracy and good governance have traditionally been based in this country.''\cite{surveillance}}.
+
+All these facts point to an obvious direction: there is an urgent need for open, secure and distributed personal communication platforms. This is where the present peer-to-peer microblogging proposal fits in.
+
+Of course, to be sucessful, such P2P microblogging cannot just provide resilience and security, but it must also be user-friendly. This is a key point to the adoption of any new software or web service. Some current P2P message proposals offer good examples of what not to do in terms of user-friendliness, like requiring the user to know a cryptic address composed of 36 case sensitive characters~\cite{warren2012bitmessage}.
+
+The ability to provide easy to remember user logins must be considered a fundamental requirement. While users must be free to choose their login names, providing anonymity to whoever needs to express himself freely without fear of retaliation, it is important to realize that a web of trust is built on these microblogging infrastructure based upon real existing and fully identifiable people. This issue can be appreciated in Hudson plane crash coverage~\cite{sklar2009} where trusted aggregators helped separating the reliable information from random noise. These people tend to work as hubs in information circulation and are often defined as ``influential''. Any serious P2P microblogging proposal must foster this kind of organization.
+
+This paper presents a proposal of a new P2P microblogging platform that is scalable, resilience to failures and attacks, does not depend on any central authority for user registration, provides easy-to-use encrypted private communication and authenticated public posts. The architecture tries to leverage from existing and proven P2P technologies such as Bittorrent and Bitcoin as much possible. Privacy is also one of the primary design concerns, no one should be able to see the user's IP or their followers unless he explicitly shares such information.
+
+The proposed platform is comprised of three mostly independent overlay networks. The first provides distributed user registration and authentication and is based on the Bitcoin protocol. The second one is a Distributed Hash Table (DHT) overlay network providing key/value storage for user resources and tracker location for the third network. The last network is a collection of possibly disjoint ``swarms'' of followers, based on the Bittorrent protocol, which can be used for efficient near-instant notification delivery to many users.
+
 
 \end{document}
